@@ -35,7 +35,7 @@ function Cards() {
               src='images/gyoza.jpg'
               text='Japanese-style dumplings filled with ground meat and vegetables, usually pan-fried to create a crispy bottom and steamed top'
               name='Gyoza'
-              path='/contact-us'
+              path='/order'
             />
             <CardItem
               src='images/miso.jpg'
