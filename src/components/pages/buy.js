@@ -3,7 +3,7 @@ import "../../App.css";
 import Footer from "../Footer";
 import Buy from '../Buy';
 
-function sushi() {
+function buy() {
   return (
     <>
         <Buy />
@@ -12,4 +12,4 @@ function sushi() {
   )
 }
 
-export default sushi
+export default buy
