@@ -1,0 +1,117 @@
+
+
+.container_body {
+    background: url(/public/images/chef_contact.jpg);
+    background-size: cover;
+    background-position: center;
+   
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.container_contact {
+    width: 50%;
+    background: goldenrod;
+    border-radius: 20px;
+}
+.container_contact form {
+    width: 100%;
+    text-align: center;
+    padding: 25px 20px;
+}
+.container_contact form h1 {
+    padding: 10px 0;
+    color: black;
+}
+.container_contact form .id {
+    position: relative;
+
+}
+.id i{
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.container_contact form input {
+    width: 100%;
+    height: 50px;
+    margin: 4px 0;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    background: white;
+    padding: 0 15px;
+    padding-right: 45px;
+    font-size: 20px;
+}
+.container_contact form textarea {
+    padding: 5px 15px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    background: white;
+    padding: 0 15px;
+    font-size: 20px;
+    width: 100%;
+    margin: 4px 0;
+}
+
+.container_contact form input:focus,
+.container_contact form textarea:focus {
+    border: 1px solid black;
+    color: black;
+    transition: all 0.3s;
+}
+.container_contact form input:focus::placeholder,
+.container_contact form textarea:focus::placeholder {
+    padding-left:4px ;
+    color: black;
+    transition: all 0.3s;
+}
+.button-28 {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #1A1A1A;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    will-change: transform;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  }
+  
+  .button-28:disabled {
+    pointer-events: none;
+  }
+  
+  .button-28:hover {
+    color: goldenrod;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .button-28:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }

@@ -1,6 +1,13 @@
 import React from "react";
 import "../../App.css";
+import Footer from "../Footer";
+import Contact from "../Contact";
 
-export default function Contact() {
-  return <h1 className="contact">Contact</h1>;
+export default function contact() {
+  return (
+    <>
+    <Contact />
+    <Footer />
+    </>
+  )
 }

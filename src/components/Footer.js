@@ -49,7 +49,7 @@ function Footer() {
         </div>
       </section>
     </div>
-  );
+  )
 }
 
 export default Footer;
