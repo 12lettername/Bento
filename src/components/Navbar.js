@@ -1,7 +1,8 @@
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import './Navbar.css'
+import "./Navbar.css";
 import { Button } from "./Button";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -10,6 +11,10 @@ function Navbar() {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
+  const { loginWithRedirect } = useAuth0();
+  const { logout } = useAuth0();
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
   const showButton = () => {
     if (window.innerWidth <= 960) {
       setButton(false);
@@ -17,69 +22,82 @@ function Navbar() {
       setButton(true);
     }
   };
-  
-  useEffect(() => {
-    showButton()
-  },[])
 
-  window.addEventListener('resize', showButton);
+  useEffect(() => {
+    showButton();
+  }, []);
+
+  window.addEventListener("resize", showButton);
+
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
 
   return (
     <>
-      <nav className='navbar'>
-        <div className='navbar-container'>
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-          <img src="/bnto-high-resolution-logo-transparent.png" width="150px" alt="logo" />
+      <nav className="navbar">
+        <div className="navbar-container">
+          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+            <img
+              src="/bnto-high-resolution-logo-transparent.png"
+              width="150px"
+              alt="logo"
+            />
           </Link>
-          <div className='menu-icon' onClick={handleClick}>
-            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+          <div className="menu-icon" onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
-          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
                 Home
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link
-                to='/menu'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
+            <li className="nav-item">
+              <Link to="/menu" className="nav-links" onClick={closeMobileMenu}>
                 Menu
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link
-                to='/order'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
+            <li className="nav-item">
+              <Link to="/order" className="nav-links" onClick={closeMobileMenu}>
                 Order
               </Link>
             </li>
-            
-            <li className='nav-item'>
+
+            <li className="nav-item">
               <Link
-                to='/contact-us'
-                className='nav-links'
+                to="/contact-us"
+                className="nav-links"
                 onClick={closeMobileMenu}
               >
                 Contact Us
               </Link>
             </li>
-
-            {/* <li>
-              <Link
-                to='/sign-up'
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </Link>
-            </li> */}
+            
+            {isAuthenticated ? (
+              <li className="nav-item">
+                <button
+                  className="nav-links-button"
+                  onClick={() =>
+                    logout({
+                      logoutParams: { returnTo: window.location.origin },
+                    })
+                  }
+                >
+                  Log Out
+                </button>
+              </li>
+            ) : (
+              <li className="nav-item">
+                <button
+                  className="nav-links-button"
+                  onClick={() => loginWithRedirect()}
+                >
+                  Log In
+                </button>
+              </li>
+            )}
           </ul>
-          {/* {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>} */}
         </div>
       </nav>
     </>
