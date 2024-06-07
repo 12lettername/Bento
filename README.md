@@ -1,10 +1,18 @@
-# Getting Started with Create React App
+# Bénto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+Welcome to Bénto! This website serves as the online portal  for our traditional Japanese restaurant. The goal is to provide a seamless experience for customers to explore our food and services .
 
-In the project directory, you can run:
+## Features
+
+- **Home Page** : An inviting introduction to the restaurant with images and welcome message.
+- **Menu**  : Detailed descriptions of our 5 dishes(Sushi, Udon, Tempura, Gyoza and Miso Soup)
+- ****
+
+
+
+
 
 ### `npm start`
 
