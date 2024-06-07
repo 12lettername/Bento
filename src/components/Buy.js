@@ -21,7 +21,7 @@ export default function Buy() {
       <div className="buy_container">
         <div className="buy_content">
           <Link to="/order">
-            <button className="button-28 buy_back">
+            <button className="button-28_buy buy_back">
               <i class="fa-solid fa-arrow-left"></i> GO BACK
             </button>
           </Link>
@@ -59,7 +59,7 @@ export default function Buy() {
                 </select>
               </label>
             </div>
-            <button className="button-28 buy_submit" >
+            <button className="button-28_buy buy_submit" >
               BUY
             </button>
           </form>

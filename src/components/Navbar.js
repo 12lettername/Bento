@@ -73,7 +73,13 @@ function Navbar() {
                 Contact Us
               </Link>
             </li>
+        {isAuthenticated && (
+        <li>
+    <p className="user_name">{user.nickname}</p>
+    </li>)}
+        
             
+    
             {isAuthenticated ? (
               <li className="nav-item">
                 <button
@@ -84,7 +90,7 @@ function Navbar() {
                     })
                   }
                 >
-                  Log Out
+                  LOG OUT
                 </button>
               </li>
             ) : (
@@ -93,7 +99,7 @@ function Navbar() {
                   className="nav-links-button"
                   onClick={() => loginWithRedirect()}
                 >
-                  Log In
+                  LOG IN
                 </button>
               </li>
             )}

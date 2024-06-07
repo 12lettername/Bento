@@ -21,7 +21,7 @@ export default function Contact() {
               <i className='far fa-envelope'></i>
           </div>
               <textarea cols="15" rows="5" placeholder='Enter your feedback' />
-              <button className='button-28'>Send</button>
+              <button className='button-28_contact'>Send</button>
         </form>
       </div>
       </div>

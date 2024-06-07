@@ -83,6 +83,13 @@
     border-bottom: 4px solid #FADADD;
     transition: all 0.2s ease-out;
   }
+  .user_name {
+    color: gray;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
   
   .fa-bars {
     color: #fff;

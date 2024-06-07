@@ -18,7 +18,7 @@ function OrderItem(props) {
             <h5 className='price'><i class="fa-solid fa-indian-rupee-sign fa-sm"></i>{props.price}</h5>
           </div>
           <Link to={props.path} >
-            <button className='button-28'>ORDER <i class="fa-solid fa-arrow-right"></i></button>
+            <button className='button-28_order'>ORDER <i class="fa-solid fa-arrow-right"></i></button>
           </Link>
         </div>
     </div>
